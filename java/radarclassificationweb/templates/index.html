@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Frequency Ranges</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Set Frequency Ranges</h1>
+        <form method="POST" action="/set_ranges">
+            <h2>Birds</h2>
+            <label for="bird_min_freq">Minimum Frequency for Birds:</label>
+            <input type="number" step="0.00001" id="bird_min_freq" name="bird_min_freq" required>
+            
+            <label for="bird_max_freq">Maximum Frequency for Birds:</label>
+            <input type="number" step="0.00001" id="bird_max_freq" name="bird_max_freq" required>
+            
+            <h2>Drones</h2>
+            <label for="drone_min_freq">Minimum Frequency for Drones:</label>
+            <input type="number" step="0.00001" id="drone_min_freq" name="drone_min_freq" required>
+            
+            <label for="drone_max_freq">Maximum Frequency for Drones:</label>
+            <input type="number" step="0.00001" id="drone_max_freq" name="drone_max_freq" required>
+            
+            <button type="submit">Generate Dataset</button>
+        </form>
+    </div>
+</body>
+</html>

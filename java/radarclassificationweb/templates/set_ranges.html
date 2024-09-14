@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Created</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Dataset Created</h1>
+        <p>Model Accuracy: {{ accuracy }}</p>
+        <form method="POST" action="/classify">
+            <label for="frequency">Enter Frequency to Classify:</label>
+            <input type="number" step="0.00001" id="frequency" name="frequency" required>
+            
+            <input type="hidden" name="bird_min_freq" value="{{ bird_min_freq }}">
+            <input type="hidden" name="bird_max_freq" value="{{ bird_max_freq }}">
+            <input type="hidden" name="drone_min_freq" value="{{ drone_min_freq }}">
+            <input type="hidden" name="drone_max_freq" value="{{ drone_max_freq }}">
+            
+            <button type="submit">Classify Frequency</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
